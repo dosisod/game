@@ -1,0 +1,52 @@
+<body onclick="mxy(event)">
+<canvas id="c">
+</canvas>
+</body>
+<style>
+* {
+	font-family: monospace;
+	margin: 0;
+	padding: 0;
+}
+canvas {
+	image-rendering: pixelated;
+}
+html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	width: 100%;
+	height: 100%;
+}
+#c {
+	width: 100%;
+	height: 100%;
+}
+</style>
+<script>
+wx=window.innerWidth
+wy=window.innerHeight
+
+display=document.getElementById("c").getContext("2d")
+display.canvas.width=wx;
+display.canvas.height=wy;
+display.fillStyle="gray";
+display.fillRect(0,0,wx,wy)
+
+pos=[3,-5]
+line1=[[1,3],[5,-3]]
+line2=[[2,-2],[4,-2]]
+fov=90
+rot=0
+
+line(0,0,100, 100)
+
+function line(x1, y1, x2, y2) {
+	display.beginPath();
+	display.moveTo(x1, y1);
+	display.lineTo(x2, y2);
+	display.stroke();
+}
+</script>
+
